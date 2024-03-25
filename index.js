@@ -34,7 +34,7 @@ app.post('/deploy', (req, res) => {
 
 // Define a route handler for the root path
 app.get('/', (req, res) => {
-  res.send('polisi, bismapol!');
+  res.send('dapa ganteng betul!');
 });
 
 // Start the server
