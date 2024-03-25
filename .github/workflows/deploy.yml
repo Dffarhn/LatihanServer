@@ -20,4 +20,4 @@ jobs:
 
       - name: Deploy code to VirtualBox
         run: |
-          ssh -p 22 dradap@192.168.147.244 'cd /var/www/LatihanServer && /var/www/LatihanServer/deploy.sh'
+          ssh -v -p 22 dradap@192.168.147.244 'cd /var/www/LatihanServer && ./deploy.sh'
