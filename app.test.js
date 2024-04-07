@@ -9,7 +9,7 @@ describe('Test Express Router', () => {
   it('should respond with "halo guys" on GET /sapa', async () => {
     const response = await request(app).get('/sapa');
     expect(response.status).toBe(200);
-    expect(response.text).toBe('halo guys');
+    expect(response.text).toBe('halo guys disapa');
   });
 
   it('should respond with "dapa rehann mengganti dapa ganteng betul!" on GET /salam', async () => {
