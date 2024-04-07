@@ -1,20 +1,37 @@
-# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
-# For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
-
-name: Node.js Package
+name: Auto Merge to Main
 
 on:
   push:
     branches:
-      - main
+      - backend
 
 jobs:
-  build:
+  merge-to-main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout main branch
+        uses: actions/checkout@v2
         with:
-          node-version: 18
-      - run: npm ci
-      - run: npm test
+          ref: main
+
+      - name: Merge brain-backend into main
+        run: git merge --no-ff ${{ github.event.before }} --no-edit
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Push changes to main
+        if: success()
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+        run: |
+          git config user.name 'GitHub Actions'
+          git config user.email 'actions@github.com'
+          git push
+
+      - name: Verify merge
+        run: git log --oneline -5
