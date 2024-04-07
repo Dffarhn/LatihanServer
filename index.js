@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 app.get('/sapa',(req, res) => {
 
-    res.send("halo guys kalian kusapa")
+    res.send("halo guys")
 })
 // Define a route handler for the root path
 app.get('/', (req, res) => {
