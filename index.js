@@ -2,7 +2,7 @@ const express = require('express');
 const { exec } = require('child_process');
 const bodyParser = require('body-parser');
 const  route  = require('./routes.js');
-
+const db = require('./configdb.js');
 
 const app = express();
 const port = 3001;
@@ -11,6 +11,16 @@ const port = 3001;
 app.use(bodyParser.json());
 
 // Endpoint untuk menangani webhook dari GitHub
+
+app.get('/users', async (req, res) => {
+  try {
+      const { rows } = await db.query('SELECT * FROM "user"');
+      res.json(rows);
+  } catch (err) {
+      console.error('Error:', err);
+      res.status(500).send('Error fetching users.');
+  }
+});
 
 app.use(route)
 // Start the server
