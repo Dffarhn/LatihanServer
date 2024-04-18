@@ -8,12 +8,16 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
+    - name: deploy using ssh
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
-        script: whoami
+        script: |
+          cd /home/dradap/Documents/LatihanServer/
+          git pull origin main
+          git status
+          npm install
           
