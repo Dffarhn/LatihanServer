@@ -11,7 +11,7 @@ const salam = (req, res) => {};
 route.get("/sapa", sapa);
 // Define a route handler for the root path
 route.get("/", (req, res) => {
-  res.send("dapa rehann mengganti dapa ganteng betul!");
+  res.send("dapa rehann mengganti dapa ganteng betul!!");
 });
 
 // Start the server
