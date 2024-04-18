@@ -17,4 +17,4 @@ jobs:
         run: |
           ssh dradap@192.168.1.4 'cd /home/dradap/Documents/test2/LatihanServer && git pull origin main'
         env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH }}
