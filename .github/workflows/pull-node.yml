@@ -11,9 +11,9 @@ jobs:
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@v1.0.3
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.PRIVATE_KEY }}
+        host: '192.168.1.4'
+        username: 'dradap'
+        password: '@Dradap123'
         port: 22
         script: |
           cd /home/dradap/Documents/test2/LatihanServer
