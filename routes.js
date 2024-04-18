@@ -3,7 +3,7 @@ const { Router } = require("express");
 const route = Router();
 
 const sapa = (req, res) => {
-  res.send("halo guys disapa");
+  res.send("halo guys disapa dari device 2 perubahan");
 };
 
 const salam = (req, res) => {};
