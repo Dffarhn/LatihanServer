@@ -8,6 +8,7 @@ const sapa = (req, res) => {
 
 const salam = (req, res) => {};
 
+
 route.get("/sapa", sapa);
 // Define a route handler for the root path
 route.get("/", (req, res) => {
