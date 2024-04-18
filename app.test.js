@@ -15,6 +15,6 @@ describe('Test Express Router', () => {
   it('should respond with "dapa rehann mengganti dapa ganteng betul!" on GET /salam', async () => {
     const response = await request(app).get('/');
     expect(response.status).toBe(200);
-    expect(response.text).toBe("dapa rehann mengganti dapa ganteng betul!!");
+    expect(response.text).toBe("dapa rehann mengganti dapa ganteng betul!!!!!");
   });
 });
