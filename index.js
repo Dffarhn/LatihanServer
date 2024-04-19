@@ -10,7 +10,7 @@ const port = 3001;
 // Middleware untuk menguraikan payload JSON dari webhook
 app.use(bodyParser.json());
 
-// Endpoint untuk menangani webhook dari GitHub
+// Endpoint untuk medfdswfnangani webhook dari GitHub
 
 app.get('/users', async (req, res) => {
   try {
