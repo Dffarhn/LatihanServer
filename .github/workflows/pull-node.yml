@@ -13,54 +13,6 @@ jobs:
       with:
         host: 192.168.1.4
         username: root
-        key: '-----BEGIN OPENSSH PRIVATE KEY-----
-          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
-          -----END OPENSSH PRIVATE KEY-----'
+        key: '${{ secrets.PRIVATE_KEY }}'
         port: 22
         script: whoami
