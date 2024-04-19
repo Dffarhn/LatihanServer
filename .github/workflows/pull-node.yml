@@ -14,5 +14,6 @@ jobs:
         host: 192.168.1.4
         username: dradap
         password: '@Dradap123'
+        key: '${{ secrets.PRIVATE_KEY }}'
         port: 22
         script: whoami
