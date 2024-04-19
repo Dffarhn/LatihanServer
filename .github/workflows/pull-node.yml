@@ -16,9 +16,6 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         passphrase: ${{ secrets.PASS }}
         port: 22
-        script: |
-          cd /home/dradap/Documents/LatihanServer/
-          git pull origin main
-          git status
-          npm install
-          
+        script: ssh -vvv ${{ secrets.USERNAME }}@${{ secrets.HOST }} "whoami"
+
+        
